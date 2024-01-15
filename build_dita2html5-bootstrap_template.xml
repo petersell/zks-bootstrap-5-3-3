@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+<project xmlns:if="ant:if" xmlns:dita="http://dita-ot.sourceforge.net">
+  <target
+    name="dita2html5-bootstrap"
+    dita:depends="{bootstrap.process.pre},bootstrap.theme.init,dita2html5-bootstrap.init,
+             dita2html5,{bootstrap.process.post}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
+  />
+
+  <target
+    name="bootstrap.scripts.copy"
+    depends="bootstrap.scripts.popover,
+             bootstrap.scripts.dark.mode"
+  />
+
+  <target name="dita-bootstrap.css.copy" description="Copy CSS files">
+    <property
+      name="dita-bootstrap.css.dir"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"
+    />
+
+    <!-- Add Common CSS where Bootstrap variables override DITA-OT defaults -->
+    <loadfile
+      property="dita-bootstrap.css"
+      srcFile="${dita-bootstrap.css.dir}/common-bootstrap.css"
+    />
+    <echo
+      append="true"
+      message="${line.separator}${dita-bootstrap.css}"
+      if:set="dita-bootstrap.css.add"
+      file="${extend.css.file}"
+    />
+
+    <!--
+      Append side-toc CSS for the sidebar if present,
+      Otherwise append none-toc CSS if nav-toc=none.
+    -->
+    <condition
+      property="dita-bootstrap.side-toc.css.file"
+      value="${dita-bootstrap.css.dir}/none-toc.css"
+    >
+      <equals arg1="${nav-toc}" arg2="none"/>
+    </condition>
+    <property
+      name="dita-bootstrap.side-toc.css.file"
+      value="${dita-bootstrap.css.dir}/side-toc.css"
+    />
+
+    <loadfile
+      property="dita-bootstrap.side-toc"
+      srcFile="${dita-bootstrap.side-toc.css.file}"
+    />
+    <echo
+      append="true"
+      message="${line.separator}${dita-bootstrap.side-toc}"
+      if:set="dita-bootstrap.css.add"
+      file="${extend.css.file}"
+    />
+
+    <!-- Append Bootstrap scrollspy CSS if scrollspy-toc is set -->
+    <condition
+      if:set="dita-bootstrap.css.add"
+      property="dita-bootstrap.scrollspy.css.file"
+      value="${dita-bootstrap.css.dir}/scrollspy-toc.css"
+    >
+      <not>
+        <equals arg1="${scrollspy-toc}" arg2="none"/>
+      </not>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.scrollspy.css.file"
+      property="dita-bootstrap.scrollspy"
+      srcFile="${dita-bootstrap.scrollspy.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.scrollspy.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.scrollspy}"
+      file="${extend.css.file}"
+    />
+
+    <!-- Append Bootstrap menubar-toc CSS if menubar-toc.include=yes -->
+    <condition
+      if:set="dita-bootstrap.css.add"
+      property="dita-bootstrap.menubar-toc.css.file"
+      value="${dita-bootstrap.css.dir}/menubar-toc.css"
+    >
+      <equals arg1="${menubar-toc.include}" arg2="yes"/>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.menubar-toc.css.file"
+      property="dita-bootstrap.menubar-toc"
+      srcFile="${dita-bootstrap.menubar-toc.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.menubar-toc.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.menubar-toc}"
+      file="${extend.css.file}"
+    />
+
+    <!-- Append Bootstrap collapsible CSS if toc is collapsible -->
+    <condition
+      if:set="dita-bootstrap.css.add"
+      property="dita-bootstrap.collapsible.css.file"
+      value="${dita-bootstrap.css.dir}/collapsible-toc.css"
+    >
+      <equals arg1="${nav-toc}" arg2="collapsible"/>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.collapsible.css.file"
+      property="dita-bootstrap.collapsible"
+      srcFile="${dita-bootstrap.collapsible.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.collapsible.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.collapsible}"
+      file="${extend.css.file}"
+    />
+  </target>
+
+  <target name="bootstrap.scripts.popover" if="bootstrap.copy.popover">
+    <!-- Add initialization script for popovers and tooltips -->
+    <mkdir dir="${dita.output.dir}/js"/>
+    <copy todir="${dita.output.dir}/js">
+      <fileset
+        dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes"
+        includes="popovers.js"
+      />
+    </copy>
+  </target>
+
+  <target name="bootstrap.scripts.dark.mode" if="bootstrap.copy.dark.mode">
+    <!-- Add dark mode initialization script -->
+    <mkdir dir="${dita.output.dir}/js"/>
+    <copy todir="${dita.output.dir}/js">
+      <fileset
+        dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes"
+        includes="dark-mode-toggler.js"
+      />
+    </copy>
+  </target>
+
+  <target name="dita2html5-bootstrap.init">
+    <!-- Location of page header template with hard-coded links -->
+    <property
+      name="args.hdr"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/hdr.navbar.default.xml"
+    />
+    <!-- Location of bootstrap icons if required -->
+    <makeurl
+      property="icons.cdn.path"
+      file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
+    />
+    <!-- Entrypoint for XSL transforms -->
+    <property
+      name="args.xsl"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
+    />
+
+    <makeurl
+      if:set="bootstrap.sidebar.hdr"
+      property="bootstrap.sidebar.hdr.path"
+      file="${bootstrap.sidebar.hdr}"
+    />
+    <makeurl
+      if:set="bootstrap.sidebar.ftr"
+      property="bootstrap.sidebar.ftr.path"
+      file="${bootstrap.sidebar.ftr}"
+    />
+    <makeurl
+      if:set="bootstrap.topbar.hdr"
+      property="bootstrap.topbar.hdr.path"
+      file="${bootstrap.topbar.hdr}"
+    />
+    <!-- Default parameter values -->
+    <property name="args.html5.toc" value="toc"/>
+    <property name="args.copycss" value="yes"/>
+    <property name="args.csspath" value="css"/>
+    <property name="icons.include" value="yes"/>
+    <property name="menubar-toc.include" value="no"/>
+    <property name="scrollspy-toc" value="none"/>
+    <property name="nav-toc" value="partial"/>
+    <property name="popovers.include" value="yes"/>
+    <property name="dark.mode.include" value="yes"/>
+    <property name="dita-bootstrap.css.add" value="yes"/>
+
+    <!--
+      Load alternate Bootstrap CSS for RTL languages such as Arabic,
+      Farsi, Urdu etc. Load standard Bootstrap CSS for LTR languages like English
+    -->
+    <condition property="bidi.include" value="yes" else="no">
+      <matches
+        string="${default.language}"
+        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
+      />
+    </condition>
+    <condition
+      property="args.hdf"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.rtl.xml"
+      else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
+    >
+      <equals arg1="${bidi.include}" arg2="yes"/>
+    </condition>
+
+    <!-- Add included javascript functions if required -->
+    <condition property="bootstrap.copy.popover">
+      <equals arg1="${popovers.include}" arg2="yes"/>
+    </condition>
+    <condition property="bootstrap.copy.dark.mode">
+      <equals arg1="${dark.mode.include}" arg2="yes"/>
+    </condition>
+  </target>
+
+  <target name="bootstrap.theme.init" if="bootstrap.theme">
+    <!-- Generate a custom theme based on a hdr template -->
+
+    <condition property="bootstrap.rtl" value=".rtl." else=".">
+      <matches
+        string="${default.language}"
+        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
+      />
+    </condition>
+
+    <tempfile
+      property="bootstrap.theme.file"
+      suffix=".xml"
+      deleteonexit="true"
+      destdir="${java.io.tmpdir}"
+    />
+    <condition
+      property="bootstrap.template.file"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/script-only.hdf.xml"
+      else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/theme.hdf.xml"
+    >
+      <equals arg1="${bootstrap.theme}" arg2="none"/>
+    </condition>
+
+    <condition property="toc-spacer.padding" value="1">
+      <or>
+        <equals arg1="${bootstrap.theme}" arg2="darkly"/>
+        <equals arg1="${bootstrap.theme}" arg2="flatly"/>
+        <equals arg1="${bootstrap.theme}" arg2="materia"/>
+        <equals arg1="${bootstrap.theme}" arg2="pulse"/>
+        <equals arg1="${bootstrap.theme}" arg2="quartz"/>
+        <equals arg1="${bootstrap.theme}" arg2="sketchy"/>
+      </or>
+    </condition>
+    <condition property="toc-spacer.padding" value="3">
+      <or>
+        <equals arg1="${bootstrap.theme}" arg2="lux"/>
+      </or>
+    </condition>
+
+    <copy
+      file="${bootstrap.template.file}"
+      toFile="${bootstrap.theme.file}"
+      overwrite="true"
+    />
+
+    <replace
+      file="${bootstrap.theme.file}"
+      token="@@theme@@"
+      value="${bootstrap.theme}/bootstrap${bootstrap.rtl}min.css "
+    />
+    <property name="args.hdf" value="${bootstrap.theme.file}"/>
+    <property
+      file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/cfg/${bootstrap.theme}.properties"
+    />
+  </target>
+</project>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
+
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
+<topic id="button-group">
+  <title>Button group</title>
+  <shortdesc>Group a series of buttons together on a single line or stack them in a vertical column.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Button Group</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>div</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>Basic example</title>
+      <p>Wrap a series of buttons with <xmlelement>xref outputclass="btn-*"</xmlelement> in a <xmlelement>div
+          outputclass="btn-group"</xmlelement>
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <div outputclass="btn-group">
+        <xref outputclass="btn-primary" href="#">Left</xref>
+        <xref outputclass="btn-primary" href="#">Middle</xref>
+        <xref outputclass="btn-primary" href="#">Right</xref>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div outputclass="btn-group"&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Right&lt;/xref&gt;
+&lt;/div&gt;</codeblock>
+    <section>
+      <title>Mixed styles</title>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <div outputclass="btn-group">
+        <xref outputclass="btn-danger" href="#">Left</xref>
+        <xref outputclass="btn-warning" href="#">Middle</xref>
+        <xref outputclass="btn-success" href="#">Right</xref>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div outputclass="btn-group"&gt;
+  &lt;xref outputclass="btn-danger" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-warning" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-success" href="#"&gt;Right&lt;/xref&gt;
+&lt;/div&gt;</codeblock>
+    <section>
+      <title>Outlined styles</title>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <div outputclass="btn-group">
+        <xref outputclass="btn-outline-primary" href="#">Left</xref>
+        <xref outputclass="btn-outline-primary" href="#">Middle</xref>
+        <xref outputclass="btn-outline-primary" href="#">Right</xref>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div outputclass="btn-group"&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Right&lt;/xref&gt;
+&lt;/div&gt;</codeblock>
+    <section>
+      <title>Button toolbar</title>
+      <p>Combine sets of button groups into button toolbars for more complex components.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <div outputclass="btn-toolbar">
+        <div outputclass="btn-group me-2">
+          <xref outputclass="btn-primary" href="#">1</xref>
+          <xref outputclass="btn-primary" href="#">2</xref>
+          <xref outputclass="btn-primary" href="#">3</xref>
+          <xref outputclass="btn-primary" href="#">4</xref>
+        </div>
+        <div outputclass="btn-group me-2">
+          <xref outputclass="btn-secondary" href="#">5</xref>
+          <xref outputclass="btn-secondary" href="#">6</xref>
+          <xref outputclass="btn-secondary" href="#">7</xref>
+        </div>
+        <div outputclass="btn-group me-2">
+          <xref outputclass="btn-info" href="#">8</xref>
+        </div>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div outputclass="btn-toolbar"&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;1&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;2&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;3&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;4&lt;/xref&gt;
+  &lt;/div&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;5&lt;/xref&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;6&lt;/xref&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;7&lt;/xref&gt;
+  &lt;/div&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-info" href="#"&gt;8&lt;/xref&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</codeblock>
+    <section>
+      <title>Vertical variation</title>
+      <p>Make a set of buttons appear vertically stacked rather than horizontally.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <div outputclass="btn-group-vertical">
+        <xref outputclass="btn-primary" href="#">Top</xref>
+        <xref outputclass="btn-primary" href="#">Middle</xref>
+        <xref outputclass="btn-primary" href="#">Bottom</xref>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div class="btn-group-vertical"&gt;
+  ...etc
+&lt;/div&gt;</codeblock>
+  </body>
+</topic>

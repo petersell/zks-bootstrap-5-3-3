@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
+
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
+<topic id="buttons">
+  <title>Buttons</title>
+  <shortdesc>Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple
+    sizes, states, and more.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Buttons</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>xref</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>Example</title>
+      <p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few extras
+        thrown in for more control.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <xref href="#" outputclass="btn-primary">Primary</xref>
+      <xref href="#" outputclass="btn-secondary">Secondary</xref>
+      <xref href="#" outputclass="btn-success">Success</xref>
+      <xref href="#" outputclass="btn-danger">Danger</xref>
+      <xref href="#" outputclass="btn-warning">Warning</xref>
+      <xref href="#" outputclass="btn-info">Info</xref>
+      <xref href="#" outputclass="btn-light">Light</xref>
+      <xref href="#" outputclass="btn-dark">Dark</xref>
+    </bodydiv>
+    <codeblock>&lt;xref href="#" outputclass="btn-primary"&gt;Primary&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-secondary"&gt;Secondary&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-success"&gt;Success&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-danger"&gt;Danger&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-warning"&gt;Warning&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-info"&gt;Info&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-light"&gt;Light&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-dark"&gt;Dark&lt;/xref&gt;</codeblock>
+    <section>
+      <title>Outline buttons</title>
+      <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with
+        the <xmlatt>outputclass</xmlatt> and a value of <codeph>btn-outline-*</codeph> to remove all background images
+        and colors on any button.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <xref href="#" outputclass="btn-outline-primary">Primary</xref>
+      <xref href="#" outputclass="btn-outline-secondary">Secondary</xref>
+      <xref href="#" outputclass="btn-outline-success">Success</xref>
+      <xref href="#" outputclass="btn-outline-danger">Danger</xref>
+      <xref href="#" outputclass="btn-outline-warning">Warning</xref>
+      <xref href="#" outputclass="btn-outline-info">Info</xref>
+      <xref href="#" outputclass="btn-outline-light">Light</xref>
+      <xref href="#" outputclass="btn-outline-dark">Dark</xref>
+    </bodydiv>
+    <codeblock>&lt;xref href="#" outputclass="btn-outline-primary"&gt;Primary&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-secondary"&gt;Secondary&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-success"&gt;Success&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-danger"&gt;Danger&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-warning"&gt;Warning&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-info"&gt;Info&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-light"&gt;Light&lt;/xref&gt;
+&lt;xref href="#" outputclass="btn-outline-dark"&gt;Dark&lt;/xref&gt;</codeblock>
+  </body>
+</topic>

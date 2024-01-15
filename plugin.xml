@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+<plugin id="net.infotexture.dita-bootstrap">
+  <feature extension="package.version" value="5.3.3"/>
+  <require plugin="org.dita.html5"/>
+  <require plugin="fox.jason.extend.css"/>
+  <transtype
+    name="html5-bootstrap"
+    extends="html5"
+    desc="HTML5 with extensible Bootstrap style"
+  >
+    <param
+      name="args.breadcrumbs"
+      desc="Specifies whether to generate breadcrumb links."
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="bootstrap.breadcrumb.divider"
+      type="string"
+      desc="Divider for bootstrap breadcrumbs"
+    />
+    <param
+      name="nav-toc"
+      type="enum"
+      desc="Specifies whether to generate a navigation TOC in topic pages."
+    >
+      <val
+        desc="Bootstrap styled partial TOC with descendents in a list-group"
+      >list-group-partial</val>
+      <val
+        desc="Bootstrap styled full TOC using a list-group"
+      >list-group-full</val>
+      <val
+        desc="Bootstrap styled partial TOC with descendents in nav-pills"
+      >nav-pill-partial</val>
+      <val
+        desc="Bootstrap styled full ToC using indented nav-pills"
+      >nav-pill-full</val>
+      <val desc="Bootstrap styled collapsible menu">collapsible</val>
+    </param>
+    <param
+      name="icons.cdn.path"
+      type="file"
+      desc="Specifies the URL for a icon fonts stylesheet CDN"
+    />
+    <param
+      name="bidi.include"
+      desc="Specifies whether to include bidirectional CSS"
+      type="enum"
+    >
+      <val default="true">yes</val>
+      <val>no</val>
+    </param>
+    <param
+      name="icons.include"
+      desc="Specifies whether to include an icon fonts stylesheet in the header"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="menubar-toc.include"
+      desc="Specifies whether to include a menu bar at the top of the page"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="toc-spacer.padding"
+      desc="Specifies the vertical padding to add to the side menu"
+      type="enum"
+    >
+      <val default="true">0</val>
+      <val>1</val>
+      <val>2</val>
+      <val>3</val>
+      <val>4</val>
+      <val>5</val>
+    </param>
+    <param
+      name="popovers.include"
+      desc="Specifies whether to enable popovers and tooltips"
+      type="enum"
+    >
+      <val default="true">yes</val>
+      <val>no</val>
+    </param>
+    <param
+      name="dark.mode.include"
+      desc="Specifies whether to enable dark mode toggling"
+      type="enum"
+    >
+      <val default="true">yes</val>
+      <val>no</val>
+    </param>
+    <param
+      name="scrollspy-toc"
+      desc="Specifies whether to include a scrollspy menu"
+      type="enum"
+    >
+      <val default="true">none</val>
+      <val>list</val>
+      <val desc="Scrollspy menu using a list-group">list-group</val>
+      <val desc="Scrollspy menu using indented nav-pills">nav-pill</val>
+    </param>
+    <param
+      name="bootstrap.css.shortdesc"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;shortdesc&gt; elements"
+    />
+    <param
+      name="bootstrap.css.codeblock"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"
+    />
+    <param
+      name="bootstrap.css.topic.title"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;topic&gt; elements"
+    />
+    <param
+      name="bootstrap.css.section.title"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;section&gt; elements"
+    />
+    <param
+      name="bootstrap.css.card"
+      type="string"
+      desc="Bootstrap classes for card components"
+    />
+    <param
+      name="bootstrap.css.carousel"
+      type="string"
+      desc="Bootstrap classes for carousel components"
+    />
+    <param
+      name="bootstrap.css.carousel.caption"
+      type="string"
+      desc="Bootstrap classes for carousel captions"
+    />
+    <param
+      name="bootstrap.css.carousel.indicators"
+      type="string"
+      desc="Bootstrap classes for carousel indicators"
+    />
+    <param
+      name="bootstrap.css.footer"
+      type="string"
+      desc="Bootstrap classes for footers"
+    />
+    <param
+      name="bootstrap.css.tabs"
+      type="string"
+      desc="Bootstrap classes for tabbed dialog components"
+    />
+    <param
+      name="bootstrap.css.tabs.vertical"
+      type="string"
+      desc="Bootstrap classes for vertical tabbed dialog components"
+    />
+    <param
+      name="bootstrap.css.accordion"
+      type="string"
+      desc="Bootstrap classes for accordion components"
+    />
+    <param
+      name="bootstrap.css.accordion.flush"
+      type="string"
+      desc="Bootstrap classes for flush accordion components"
+    />
+    <param
+      name="bootstrap.css.accessibility.nav"
+      type="string"
+      desc="Bootstrap classes for accessibility navigation"
+    />
+    <param
+      name="bootstrap.css.accessibility.link"
+      type="string"
+      desc="Bootstrap classes for accessibility links"
+    />
+    <param
+      name="bootstrap.css.figure"
+      type="string"
+      desc="Bootstrap classes for figures"
+    />
+    <param
+      name="bootstrap.css.figure.caption"
+      type="string"
+      desc="Bootstrap classes for figure captions"
+    />
+    <param
+      name="bootstrap.css.figure.image"
+      type="string"
+      desc="Bootstrap classes for figure images"
+    />
+    <param
+      name="bootstrap.css.dl"
+      type="string"
+      desc="Bootstrap classes for definition lists"
+    />
+    <param
+      name="bootstrap.css.dt"
+      type="string"
+      desc="Bootstrap classes for definition list terms"
+    />
+    <param
+      name="bootstrap.css.dd"
+      type="string"
+      desc="Bootstrap classes for definition list descriptions"
+    />
+    <param
+      name="bootstrap.css.pagination"
+      type="string"
+      desc="Bootstrap classes for pagination components"
+    />
+    <param
+      name="bootstrap.css.nav.parent"
+      type="string"
+      desc="Bootstrap classes for ancestors of active navbar elements"
+    />
+    <param
+      name="bootstrap.css.table"
+      type="string"
+      desc="Bootstrap classes for tables"
+    />
+    <param
+      name="bootstrap.css.thead"
+      type="string"
+      desc="Bootstrap classes for table headers"
+    />
+    <param
+      name="bootstrap.icon.note"
+      type="string"
+      desc="Bootstrap icon for standard notes"
+    />
+    <param
+      name="bootstrap.icon.attention"
+      type="string"
+      desc="Bootstrap icon for attention notes"
+    />
+    <param
+      name="bootstrap.icon.caution"
+      type="string"
+      desc="Bootstrap icon for caution notes"
+    />
+    <param
+      name="bootstrap.icon.danger"
+      type="string"
+      desc="Bootstrap icon for danger notes"
+    />
+    <param
+      name="bootstrap.icon.fastpath"
+      type="string"
+      desc="Bootstrap icon for fastpath notes"
+    />
+    <param
+      name="bootstrap.icon.important"
+      type="string"
+      desc="Bootstrap icon for important notes"
+    />
+    <param
+      name="bootstrap.icon.notice"
+      type="string"
+      desc="Bootstrap icon for notice notes"
+    />
+    <param
+      name="bootstrap.icon.remember"
+      type="string"
+      desc="Bootstrap icon for remember notes"
+    />
+    <param
+      name="bootstrap.icon.restriction"
+      type="string"
+      desc="Bootstrap icon for restriction notes"
+    />
+    <param
+      name="bootstrap.icon.tip"
+      type="string"
+      desc="Bootstrap icon for tips"
+    />
+    <param
+      name="bootstrap.icon.trouble"
+      type="string"
+      desc="Bootstrap icon for trouble notes"
+    />
+    <param
+      name="bootstrap.icon.warning"
+      type="string"
+      desc="Bootstrap icon for warning notes"
+    />
+
+    <param
+      name="bootstrap.theme"
+      desc="Defines a specific custom bootstrap theme to use"
+      type="enum"
+    >
+      <val>cerulean</val>
+      <val>cosmo</val>
+      <val>cyborg</val>
+      <val>darkly</val>
+      <val>flatly</val>
+      <val>journal</val>
+      <val>litera</val>
+      <val>lumen</val>
+      <val>lux</val>
+      <val>materia</val>
+      <val>minty</val>
+      <val>morph</val>
+      <val>none</val>
+      <val>pulse</val>
+      <val>quartz</val>
+      <val>sandstone</val>
+      <val>simplex</val>
+      <val>sketchy</val>
+      <val>slate</val>
+      <val>solar</val>
+      <val>spacelab</val>
+      <val>superhero</val>
+      <val>united</val>
+      <val>vapor</val>
+      <val>yeti</val>
+      <val>zephyr</val>
+    </param>
+    <param
+      name="bootstrap.sidebar.hdr"
+      desc="Specifies an XML file that contains custom content for the sidebar header."
+      type="file"
+    />
+    <param
+      name="bootstrap.sidebar.ftr"
+      desc="Specifies an XML file that contains content for the sidebar footer."
+      type="file"
+    />
+    <param
+      name="bootstrap.topbar.hdr"
+      desc="Specifies an XML file that contains content for the topbar header."
+      type="file"
+    />
+  </transtype>
+  <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
+  <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
+  <feature
+    extension="dita.conductor.html5.toc.param"
+    file="insertParameters.xml"
+  />
+  <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
+  <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
+  <feature
+    extension="depend.preprocess.copy-html.pre"
+    value="bootstrap.scripts.copy"
+  />
+  <!-- Offers two additional extension points for dependent plug-ins -->
+  <extension-point
+    id="bootstrap.process.pre"
+    name="Custom Bootstrap pre-processing"
+  />
+  <extension-point
+    id="bootstrap.process.post"
+    name="Custom Bootstrap post-processing"
+  />
+  <!-- Add a template file to enable overrides to use extension points -->
+  <template file="build_dita2html5-bootstrap_template.xml"/>
+</plugin>

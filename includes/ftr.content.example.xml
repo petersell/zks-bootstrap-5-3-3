@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Footer -->
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="pt-3">
+        <!-- GitHub -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #333333;"
+        >
+          <i class="bi bi-github text-white"/>
+        </a>
+        <!-- Linkedin -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #0082ca;"
+        >
+          <i class="bi bi-linkedin text-white"/>
+        </a>
+        <!-- Mastodon -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #563acc;"
+        >
+          <i class="bi bi-mastodon text-white"/>
+        </a>
+        <!-- Twitter -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #55acee;"
+        >
+          <i class="bi bi-twitter text-white"/>
+        </a>
+        <!-- Facebook -->
+        <a
+          class="btn m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-facebook text-white"/>
+        </a>
+        <!-- Google -->
+        <a
+          class="btn m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-google text-white"/>
+        </a>
+        <!-- Instagram -->
+        <a
+          class="btn m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-instagram text-white"/>
+        </a>
+        <!-- Pinterest -->
+        <a
+          class="btn m-1"
+          style="background-color: #c61118;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-pinterest text-white"/>
+        </a>
+        <!-- Stack overflow -->
+        <a
+          class="btn m-1"
+          style="background-color: #ffac44;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-stack-overflow text-white"/>
+        </a>
+        <!-- Youtube -->
+        <a
+          class="btn m-1"
+          style="background-color: #ed302f;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-youtube text-white"/>
+        </a>
+        <!-- Slack -->
+        <a
+          class="btn m-1"
+          style="background-color: #481449;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-slack text-white"/>
+        </a>
+        <!-- Dribbble -->
+        <a
+          class="btn m-1"
+          style="background-color: #ec4a89;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-dribbble text-white"/>
+        </a>
+        <!-- Reddit -->
+        <a
+          class="btn m-1"
+          style="background-color: #ff4500;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-reddit text-white"/>
+        </a>
+        <!-- Whatsapp -->
+        <a
+          class="btn m-1"
+          style="background-color: #25d366;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-whatsapp text-white"/>
+        </a>
+      </p>
+      <p class="p-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+        distinctio earum repellat quaerat voluptatibus placeat nam,
+        commodi optio pariatur est quia magnam eum harum corrupti dicta,
+        aliquam sequi voluptate quas.</p>
+      <p class="p-3">
+        <small>© 2023</small>
+      </p>
+    </div>
+  </div>
+</div>
+<!-- Footer -->

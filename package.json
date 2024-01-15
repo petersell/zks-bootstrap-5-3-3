@@ -1,0 +1,61 @@
+{
+  "name": "dita-bootstrap",
+  "description": "DITA Open Toolkit plug-in for HTML5 output with extensible Bootstrap style",
+  "homepage": "https://infotexture.github.io/dita-bootstrap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infotexture/dita-bootstrap.git"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "check": "npm run prettier-check && npm run stylelint",
+    "fix:style": "stylelint \"css/*.css\" .github/dita-ot/theme.css --fix",
+    "fmt": "npm run format",
+    "format": "prettier --write \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "format:css": "prettier --write \"**/*.css\"",
+    "format:dita": "prettier --write \"**/*.dita\"",
+    "format:xml": "prettier --write \"**/*.xml\"",
+    "format:xsl": "prettier --write \"**/*.xsl\"",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "prettier": "prettier --write \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "prettier-check": "prettier --check \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
+    "stylelint": "stylelint \"css/*.css\" .github/dita-ot/theme.css",
+    "test": "prettier --list-different \"**/*.{css,dita*,json,md,xml,xsl,yml}\""
+  },
+  "lint-staged": {
+    "*.{css,dita*,json,md,xml,xsl,yml}": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-twbs-bootstrap"
+    ],
+    "ignoreFiles": [
+      "css/custom.css"
+    ],
+    "rules": {
+      "declaration-no-important": null,
+      "selector-max-id": 1,
+      "selector-max-type": 3,
+      "selector-no-qualifying-type": null,
+      "@stylistic/number-leading-zero": "always",
+      "@stylistic/string-quotes": "single"
+    }
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "3.2.2",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.2",
+    "bootswatch": "^5.3.2",
+    "husky": "^8.0.3",
+    "lint-staged": "15.2.0",
+    "prettier": "3.1.1",
+    "stylelint": "^16.1.0",
+    "stylelint-config-twbs-bootstrap": "^13.0.0"
+  }
+}

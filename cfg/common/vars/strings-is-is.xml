@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<?xml-model href="strings.rnc" type="application/relax-ng-compact-syntax"?>
+<variables>
+  <variable id="Next">Næst</variable>
+  <variable id="Previous">Fyrri</variable>
+  <variable id="Skip to main content">Fara í aðalefni</variable>
+  <variable id="Skip to docs navigation">Farðu í skjalaleiðsögn</variable>
+  <variable id="Skip to topic navigation">Fara í flakk um efni</variable>
+</variables>

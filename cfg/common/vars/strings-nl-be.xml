@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<?xml-model href="strings.rnc" type="application/relax-ng-compact-syntax"?>
+<variables>
+  <variable id="Next">Volgende</variable>
+  <variable id="Previous">Vorig</variable>
+  <variable id="Skip to main content">Ga naar hoofdinhoud</variable>
+  <variable id="Skip to docs navigation">Ga naar navigatie in documenten</variable>
+  <variable id="Skip to topic navigation">Ga naar onderwerpnavigatie</variable>
+</variables>

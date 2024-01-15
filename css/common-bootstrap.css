@@ -1,0 +1,114 @@
+/*!
+ *  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+ *  See the accompanying LICENSE file for applicable licenses.
+ */
+
+:root {
+  --dita-prussian-blue: #1d365d;
+  --dita-maroon: #800000;
+  --dita-violet: var(--bs-purple);
+}
+
+[data-bs-theme='dark'] {
+  --dita-prussian-blue: #6a91cf;
+  --dita-violet: #cc99cd;
+  --dita-maroon: #ff7676;
+}
+
+.d-dark,
+.d-light {
+  display: none;
+}
+
+[data-bs-theme='light'] .d-light {
+  display: inherit;
+}
+
+[data-bs-theme='light'] .d-auto {
+  display: none;
+}
+
+[data-bs-theme='dark'] .d-dark {
+  display: inherit;
+}
+
+[data-bs-theme='dark'] .d-auto {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dita-prussian-blue: #6a91cf;
+    --dita-violet: #cc99cd;
+    --dita-maroon: #ff7676;
+  }
+
+  [data-bs-theme='light'] {
+    --dita-prussian-blue: #1d365d;
+    --dita-maroon: #800000;
+    --dita-violet: var(--bs-purple);
+  }
+}
+
+.syntaxdiagram {
+  color: var(--dita-maroon);
+}
+
+.numcharref,
+.parameterentity,
+.textentity,
+.xmlatt,
+.xmlelement,
+.xmlnsname,
+.xmlpi {
+  font-family: var(--bs-font-monospace);
+  color: var(--dita-violet);
+  overflow-wrap: break-word;
+}
+
+.cmdname,
+.codeph,
+.filepath,
+.option,
+.parmname {
+  font-family: var(--bs-font-monospace);
+  color: var(--bs-code-color);
+  overflow-wrap: break-word;
+}
+
+.cmdname,
+.parmname {
+  font-weight: 700;
+  color: var(--dita-prussian-blue);
+}
+
+.boolean {
+  color: var(--bs-green);
+}
+
+.state {
+  color: var(--bs-red);
+}
+
+.navbar-brand > svg {
+  margin: 4px 6px;
+  vertical-align: text-top;
+}
+
+.bs-container {
+  margin: 3rem auto;
+}
+
+.bs-sidebar-nav {
+  overflow: auto;
+}
+
+.search-box [type='search']::placeholder {
+  color: var(--bs-link-color) !important;
+}
+
+.search-box:hover,
+.search-box:focus-visible {
+  outline: 2px solid;
+  outline-color: var(--bs-link-hover-color);
+}

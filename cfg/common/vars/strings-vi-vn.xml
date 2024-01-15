@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<?xml-model href="strings.rnc" type="application/relax-ng-compact-syntax"?>
+<variables>
+  <variable id="Next">Kế tiếp</variable>
+  <variable id="Previous">Trước</variable>
+  <variable id="Skip to main content">Chuyển đến nội dung chính</variable>
+  <variable id="Skip to docs navigation">Chuyển đến điều hướng tài liệu</variable>
+  <variable id="Skip to topic navigation">Chuyển đến điều hướng chủ đề</variable>
+</variables>
