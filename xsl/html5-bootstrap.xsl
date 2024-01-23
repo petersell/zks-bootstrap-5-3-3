@@ -40,6 +40,7 @@
   <xsl:include href="../Customization/xsl/tooltips.xsl"/>
   <xsl:include href="../Customization/xsl/topic.xsl"/>
   <xsl:include href="../Customization/xsl/utility-classes.xsl"/>
+  <xsl:include href="../Customization/xsl/rel-links-zettelkasten.xsl"/>
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">
@@ -58,7 +59,7 @@
       <xsl:call-template name="gen-user-scripts"/> <!-- include user's XSL javascripts here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
       <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
-      <xsl:call-template name="gen-user-styles"/>   <!-- include user's XSL style element and content here -->
+      <!-- <xsl:call-template name="gen-user-styles"/> -->   <!-- include user's XSL style element and content here -->
 
       <!-- Add Bootstrap icons -->
       <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
